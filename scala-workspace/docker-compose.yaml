@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  ws:
+    container_name: scala-ws
+    entrypoint:
+    - sleep
+    - infinity
+    build: ./ws/
+    init: true
+    networks:
+      - scala_workspace
+    
+networks:
+  scala_workspace:
+    driver: bridge
